@@ -2,7 +2,7 @@
   <div>
     <h1>List Page</h1>
 
-    <p>This page is accessable with <b>user-read</b> permission.</p>
+    <p>This page is accessible with <b>user-read</b> permission.</p>
   </div>
 </template>
 
