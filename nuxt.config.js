@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Auth Flow',
+    title: 'Idmapp Auth',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,8 +23,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -39,8 +38,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -66,22 +64,9 @@ export default {
     strategies: {
       idmapp: {
         scheme: '~/schemes/idmapp-scheme',
+        clientId: 'idmapp',
         endpoints: {
           configuration: `${process.env.KEYCLOAK_FRONTEND_URL}/realms/${process.env.KEYCLOAK_REALM_NAME}/.well-known/openid-configuration`
-        },
-        clientId: 'idmapp',
-        token: {
-          property: 'access_token',
-          type: 'Bearer',
-          maxAge: 3600
-        },
-        idToken: {
-          property: 'id_token',
-          maxAge: 60 * 60 * 24 * 30
-        },
-        refreshToken: {
-          property: 'refresh_token',
-          maxAge: 60 * 60 * 24 * 30
         },
         responseType: 'code',
         grantType: 'authorization_code',

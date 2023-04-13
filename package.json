@@ -2,6 +2,10 @@
   "name": "nuxt-idmapp-auth",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Mücahit Nezir",
+    "email": "mucahit.nezir@mosstar.com.tr"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
