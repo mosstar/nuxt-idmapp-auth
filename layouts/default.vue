@@ -20,7 +20,7 @@
       </div>
 
       <div v-if="loggedIn" class="header-profile">
-        {{ $auth.user.name }} | {{ $auth.user.email }} | <button @click="$auth.logout()">Çıkış Yap</button>
+        {{ $auth.user.name }} | {{ $auth.user.email }} | <button @click="logout">Çıkış Yap</button>
       </div>
     </div>
 
@@ -40,6 +40,14 @@ export default {
     },
     perms () {
       return this.$store.state.role.permissions.join(', ') || 'You have no permissions'
+    }
+  },
+  methods: {
+    logout () {
+      this.$auth.logout()
+        .then(() => {
+          this.$store.dispatch('role/clearPermissions')
+        })
     }
   }
 }
