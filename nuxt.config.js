@@ -73,7 +73,7 @@ export default {
         scope: ['openid', 'profile', 'offline_access'],
         codeChallengeMethod: 'S256',
         redirectUri: `${process.env.BASE_URL}/callback`,
-        logoutRedirectUri: process.env.BASE_URL,
+        logoutRedirectUri: `${process.env.BASE_URL}/guest`,
         autoLogout: false
       }
     }
