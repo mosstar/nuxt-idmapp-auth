@@ -1,4 +1,7 @@
-export default async function ({ error, route, $checkPermission }) {
+export default async function ({ error, route, store, $checkPermission }) {
+  // Firstly, fetch all permissions
+  store.dispatch('role/setPermissions')
+
   // Find required permission
   const permissions = route.meta[0].permissions
 

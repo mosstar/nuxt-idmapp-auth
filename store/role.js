@@ -23,9 +23,6 @@ export const actions = {
     // set permissions
     const roles = user?.resource_access?.idmapp?.roles || []
     commit('SET_PERMISSIONS', roles)
-  },
-  hasPermission ({ state }, permission) {
-    return this.$checkPermission(permission)
   }
 }
 
