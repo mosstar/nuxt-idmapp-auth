@@ -20,11 +20,13 @@
       </div>
 
       <div v-if="loggedIn" class="header-profile">
-        {{ $auth.user.name }} | {{ $auth.user.email }} | <button @click="logout">Çıkış Yap</button>
+        {{ $auth.user.name }} | {{ $auth.user.email }} | <button @click="logout">Logout</button>
       </div>
     </div>
 
-    <div v-if="loggedIn" class="perms" v-text="perms" />
+    <div v-if="loggedIn" class="perms">
+      <strong>Permissions:</strong> {{ perms }}
+    </div>
 
     <nuxt />
 
