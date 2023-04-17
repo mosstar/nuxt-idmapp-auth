@@ -73,6 +73,7 @@ html, body {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -82,8 +83,10 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 10px 0;
   border-bottom: 1px solid #282828;
+  gap: 10px;
 }
 
 .header-menu {
@@ -122,7 +125,7 @@ html, body {
 
 .footer {
   border-top: 1px solid #282828;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .footer p {
