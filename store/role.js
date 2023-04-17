@@ -27,6 +27,5 @@ export const actions = {
 }
 
 export const getters = {
-  hasPermission: state => permission => $checkPermission(permission),
   permissions: state => state.permissions || []
 }
