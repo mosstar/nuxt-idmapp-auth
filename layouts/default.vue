@@ -28,7 +28,16 @@
       <strong>Permissions:</strong> {{ perms }}
     </div>
 
-    <nuxt />
+    <div class="content">
+      <nuxt />
+    </div>
+
+    <div class="footer">
+      <p>
+        This is an open source project.
+        For more information, visit our <a href="https://github.com/mosstar/nuxt-idmapp-auth" target="_blank">Github</a> page.
+      </p>
+    </div>
 
   </div>
 </template>
@@ -64,6 +73,9 @@ html, body {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -102,5 +114,19 @@ html, body {
 .perms {
   padding: 10px 0;
   border-bottom: 1px solid #282828;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid #282828;
+  padding: 15px 0;
+}
+
+.footer p {
+  margin: 0;
+  padding: 0;
 }
 </style>
