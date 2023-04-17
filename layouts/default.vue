@@ -35,7 +35,7 @@
     <div class="footer">
       <p>
         This is an open source project.
-        For more information, visit our <a href="https://github.com/mosstar/nuxt-idmapp-auth" target="_blank">Github</a> page.
+        For more information, visit our <a href="https://github.com/mosstar/nuxt-idmapp-auth" target="_blank">GitHub</a> page.
       </p>
     </div>
 
