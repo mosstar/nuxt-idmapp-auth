@@ -2,20 +2,8 @@
   <div class="wrapper">
     <div class="header">
       <div class="header-menu">
-        <nuxt-link to="/">
-          HOME
-        </nuxt-link>
-        <nuxt-link to="/public">
-          PUBLIC
-        </nuxt-link>
-        <nuxt-link v-if="!loggedIn" to="/guest">
-          GUEST
-        </nuxt-link>
-        <nuxt-link v-if="$checkPermission($permissions.userRead)" to="/list">
-          LIST
-        </nuxt-link>
-        <nuxt-link v-if="$checkPermission($permissions.userWrite)" to="/add">
-          ADD
+        <nuxt-link v-for="menuItem in visibleMenuItems" :key="menuItem.link" :to="menuItem.link">
+          {{ menuItem.title }}
         </nuxt-link>
       </div>
 
@@ -51,6 +39,40 @@ export default {
     },
     perms () {
       return this.$store.state.role.permissions.join(', ') || 'You have no permissions'
+    },
+    menuItems () {
+      const { userRead, userWrite } = this.$permissions
+
+      return [
+        {
+          title: 'Home',
+          link: '/',
+          visible: true
+        },
+        {
+          title: 'Public',
+          link: '/public',
+          visible: true
+        },
+        {
+          title: 'Guest',
+          link: '/guest',
+          visible: !this.loggedIn
+        },
+        {
+          title: 'List',
+          link: '/list',
+          visible: this.$checkPermission(userRead)
+        },
+        {
+          title: 'Add',
+          link: '/add',
+          visible: this.$checkPermission(userWrite)
+        }
+      ]
+    },
+    visibleMenuItems () {
+      return this.menuItems.filter(item => item.visible)
     }
   },
   methods: {
